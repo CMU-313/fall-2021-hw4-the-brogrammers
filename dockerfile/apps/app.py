@@ -22,5 +22,5 @@ def predict():
      return jsonify(np.asscalar(prediction))
 
 if __name__ == '__main__':
-    clf = joblib.load('/apps/model.pkl')
+    clf = joblib.load('/apps/model2.pkl')
     app.run(host="0.0.0.0", debug=True)
