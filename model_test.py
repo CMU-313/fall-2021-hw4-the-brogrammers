@@ -71,6 +71,7 @@ all_labels = [
 core = [
     'failures',     # - number of past class failures (numeric: n if 1<=n<3, else 4)
     'absences',     # - number of school absences (numeric: from 0 to 93)
+    'school',
 ]
 
 while True:
@@ -92,7 +93,7 @@ while True:
     base_precision_score = 0
     base_recall_score = 0
     for i in range(10):
-        clf = rf(n_estimators = 100) # set to lower so test is faster
+        clf = rf(n_estimators = 100)
         clf.fit(X_train, y_train)
 
         pred = clf.predict(X_test)
@@ -121,7 +122,7 @@ while True:
         total_precision_score = 0
         total_recall_score = 0
         for i in range(10):
-            clf = rf(n_estimators = 100) # set to lower so test is faster
+            clf = rf(n_estimators = 100)
             clf.fit(X_train, y_train)
 
             pred = clf.predict(X_test)
