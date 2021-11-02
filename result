@@ -1,0 +1,34 @@
+['failures', 'absences', 'school']
+f1 score: 0.0000
+paid improved score by 0.3200
+['failures', 'absences', 'school', 'paid']
+f1 score: 0.1627
+Fjob improved score by 0.2316
+['failures', 'absences', 'school', 'paid', 'Fjob']
+f1 score: 0.2100
+sex improved score by 0.1969
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex']
+f1 score: 0.2574
+Dalc improved score by 0.1100
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc']
+f1 score: 0.2680
+Mjob improved score by 0.1853
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc', 'Mjob']
+f1 score: 0.3644
+famsize improved score by 0.0782
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc', 'Mjob', 'famsize']
+f1 score: 0.2641
+famrel improved score by 0.2036
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc', 'Mjob', 'famsize', 'famrel']
+f1 score: 0.2338
+romantic improved score by 0.1270
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc', 'Mjob', 'famsize', 'famrel', 'romantic']
+f1 score: 0.2492
+/usr/local/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+guardian improved score by 0.1325
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc', 'Mjob', 'famsize', 'famrel', 'romantic', 'guardian']
+f1 score: 0.1138
+Pstatus improved score by 0.2758
+['failures', 'absences', 'school', 'paid', 'Fjob', 'sex', 'Dalc', 'Mjob', 'famsize', 'famrel', 'romantic', 'guardian', 'Pstatus']
+f1 score: 0.2479
