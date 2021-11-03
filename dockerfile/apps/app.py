@@ -9,10 +9,6 @@ import pickle
 app = Flask(__name__)
 swagger = Swagger(app)
 
-@app.route('/')
-def hello():
-    return "try the predict route it is great!"
-
 @swag_from("./api_docs/predict_doc.yml")
 @app.route('/predict', methods=['GET'])
 def predict():
