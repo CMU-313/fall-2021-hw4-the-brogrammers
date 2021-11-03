@@ -8,13 +8,43 @@ include = ['school', 'age', 'Medu', 'Fedu', 'traveltime', 'studytime', 'failures
 include.append('qual_student')
 df.drop(columns=df.columns.difference(include), inplace=True) 
 
+
+
+
 from sklearn.ensemble import RandomForestClassifier as rf
 from sklearn.model_selection import train_test_split
 import sklearn
 
 # create "x" df of the features that determine the "y" df, split data into training and test
 dependent_variable = 'qual_student'
-df = pd.get_dummies(df) # need to change
+
+
+
+
+from sklearn.preprocessing import OneHotEncoder
+import pickle
+
+categoricals = []
+for col, col_type in df.dtypes.iteritems():
+     if col_type == 'O':
+          categoricals.append(col)
+
+# produce encoder for categorical data only
+encoder = OneHotEncoder(dtype=int)
+
+encoder.fit(df[categoricals])
+with open("encoder", "wb") as f: 
+    pickle.dump(encoder, f)
+with open("categoricals", "wb") as f: 
+    pickle.dump(categoricals, f)
+
+df_cat = pd.DataFrame(encoder.transform(df[categoricals]).toarray(), columns=encoder.get_feature_names(categoricals))
+df_val = df[df.columns.difference(categoricals)]
+df = df_val.join(df_cat)
+
+
+
+
 x = df[df.columns.difference([dependent_variable])]
 y = df[dependent_variable]
 
@@ -36,3 +66,7 @@ f1_score = f1_sum / runs
 print("Model Statistics on Test Data")
 print("Accuracy: " + str(accuracy_score))
 print("FScore: " + str(f1_score))
+
+import joblib
+# modify the file path to where you want to save the model
+joblib.dump(clf, 'model2.pkl')
