@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 df = pd.read_csv('student-mat.csv', sep=';')
 df['qual_student'] = np.where(df['G3']>=15, 1, 0)
-include = ['school', 'age', 'Medu', 'Fedu', 'traveltime', 'studytime', 'failures', 'schoolsup', 'famsup', 'activities', 'higher', 'freetime', 'goout', 'Dalc', 'Walc', 'health', 'absences']
+include = ['school', 'age', 'traveltime', 'studytime', 'failures', 'schoolsup', 'famsup', 'higher', 'freetime', 'Dalc', 'Walc', 'health', 'absences']
 
 # by doing inclusion w/out the G3 we are able to remove G3 from it (shouldn't be considered)
 include.append('qual_student')
@@ -51,7 +51,7 @@ y = df[dependent_variable]
 # benchmark the model by running 10 times to see what the average scores are
 accuracy_sum = 0.0
 f1_sum = 0.0
-runs = 50
+runs = 1
 for i in range(runs):
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2) # 80/20 train/test split
     clf = rf(n_estimators=1000)
