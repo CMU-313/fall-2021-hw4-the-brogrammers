@@ -1,7 +1,7 @@
 tags:
-  -  "High Quality Student Predictor"
-summary: "Returns whether the candidate predicted as a 'high-quality' candidate"
-description: "This is an API which predicts whether a candidate is a 'high-quality' based on several features"
+  - "'High Quality' Student Predictor"
+summary: "Returns whether the candidate is classified as a 'high-quality' candidate or not"
+description: "This is an API which uses a random forest ML model to predict whether a candidate is 'high-quality' or not based on several features defined below"
 produces:
 - "application/json"
 parameters:
@@ -66,7 +66,7 @@ parameters:
   description: "current health status (numeric: from 1 - very bad to 5 - very good)"
   required: "true"
 - in: "argument"
-  name: "health"
+  name: "absences"
   type: "integer"
   description: "number of school absences (numeric: from 0 to 93)"
   required: "true"
@@ -76,12 +76,10 @@ responses:
     schema:
       type: "object"
       properties:
-        data:
-          type: "object"
-        status:
-          type: "string"
-        message:
-          type: "string"
- 
+        prediction:
+          type: "integer"
+          description: "ML prediction for the candidate (0 is not high-quality, 1 is high-quality)"
   400:
-    description: "Same response is for 202, 400"
+    description: "Bad Request"
+  404:
+    description: "Not Found"
