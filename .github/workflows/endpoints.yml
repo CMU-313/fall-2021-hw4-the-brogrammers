@@ -16,5 +16,7 @@ jobs:
       run: docker build -t ml:latest dockerfile/
     - name: Run tests
       run: docker run -d -p 5000:5000 ml
+    - name: Delay test
+      run: sleep 15
     - name: Curl request to predict endpoint
       run: curl "http://localhost:5000/predict?school=GP&age=16&traveltime=1&studytime=3&failures=0&schoolsup=yes&famsup=no&higher=yes&freetime=4&Dalc=1&Walc=1&health=3&absences=0"
