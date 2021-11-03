@@ -34,5 +34,9 @@ def predict():
     return jsonify(np.asscalar(prediction))
 
 if __name__ == '__main__':
-    clf = joblib.load('/apps/model2.pkl')
+    while True:
+        pass
+    with open("/apps/model2.pkl", "rb") as f: 
+        clf = pickle.load(f)
+    # clf = joblib.load('/apps/model2.pkl')
     app.run(host="0.0.0.0", debug=True)

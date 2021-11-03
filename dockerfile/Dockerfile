@@ -1,3 +1,8 @@
+FROM ubuntu
+
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "vim"]
+
 FROM cmeiklejohn/ml
 
 ARG VERSION
