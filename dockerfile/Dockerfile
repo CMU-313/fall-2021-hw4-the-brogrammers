@@ -6,6 +6,8 @@ RUN pip install --upgrade pip \
 
 RUN pip install flask
 
+RUN pip install flasgger
+
 # Add entrypoint (this allows variable expansion)
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

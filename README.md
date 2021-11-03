@@ -1,3 +1,14 @@
 # Software Engineering for Machine Learning Assignment
 
-Please consult the [homework assignment](https://cmu-313.github.io//assignments/hw4) for full context and instructions for this code.  
+## API Documentation ##
+
+## Model Features ##
+Features we used:
+
+Features we explicily opted not to include: 
+
+Features left out:
+
+## Deployment Instructions ##
+
+## Testing Explanation ##
