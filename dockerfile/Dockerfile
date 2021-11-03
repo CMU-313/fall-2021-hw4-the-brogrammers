@@ -14,7 +14,7 @@ EXPOSE 5000
 
 COPY ./apps/ /apps
 
-#RUN echo "Flask Server logs" > /var/log/stdout.log
+RUN echo "Flask Server logs"x > /var/log/stdout.log
 
 WORKDIR /
 
