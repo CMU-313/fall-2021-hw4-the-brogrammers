@@ -16,6 +16,9 @@ EXPOSE 5000
 
 COPY ./apps/ /apps
 
+# enforce version of important python modules
+RUN pip install -r /apps/requirement.txt
+
 #RUN echo "Flask Server logs" > /var/log/stdout.log
 
 WORKDIR /

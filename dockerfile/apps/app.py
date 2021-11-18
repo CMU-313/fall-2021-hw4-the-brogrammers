@@ -56,7 +56,7 @@ def predict():
     return jsonify(np.asscalar(prediction))
 
 if __name__ == '__main__':
-    # while True:
-    #     pass
+    while True:
+        pass
     clf = joblib.load('/apps/model_final.pkl')
     app.run(host="0.0.0.0", debug=True)
